@@ -14,9 +14,9 @@ mod owned_stack;
 #[cfg(feature = "alloc")]
 pub use stack::owned_stack::OwnedStack;
 
-#[cfg(unix)]
+#[cfg(all(unix, not(feature="bare_metal")))]
 mod os;
-#[cfg(unix)]
+#[cfg(all(unix, not(feature="bare_metal")))]
 pub use stack::os::OsStack;
 
 /// A trait for objects that hold ownership of a stack.
