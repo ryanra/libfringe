@@ -9,9 +9,9 @@
 mod slice_stack;
 pub use stack::slice_stack::SliceStack;
 
-#[cfg(feature = "alloc")]
+#[cfg(feature = "enable_alloc")]
 mod owned_stack;
-#[cfg(feature = "alloc")]
+#[cfg(feature = "enable_alloc")]
 pub use stack::owned_stack::OwnedStack;
 
 #[cfg(all(unix, not(feature="bare_metal")))]
